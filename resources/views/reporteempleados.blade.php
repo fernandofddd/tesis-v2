@@ -16,7 +16,7 @@
   <thead>
     <tr>
       <th scope="col">Foto</th>
-      <th scope="col">Clave</th>
+      <!-- <th scope="col">Clave</th> -->
       <th scope="col">Nombre Completo</th>
       <th scope="col">Correo</th>
       <th scope="col">Programa</th>
@@ -28,7 +28,7 @@
   	@foreach($consulta as $c)
     <tr>
       <td> <img src="{{asset('archivos/'.$c->img)}}"height = "50" width="50"></td>
-      <th scope="row">{{$c->ide}}</th>
+      <!-- <th scope="row">{{$c->ide}}</th> -->
       <td>{{$c->nombre}} {{$c->apellido}}</td>
       <td>{{$c->email}}</td>
       <td>{{$c->depa}}</td>
