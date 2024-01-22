@@ -2,10 +2,10 @@
 
 @section('contenido')
 <div class="container">
-	<h1>REPORTE DE EMPLEADOS</h1>
+	<h1>Alumnos Inscritos</h1>
 <br>
 <a href="{{route('altaempleado')}}">
-<button type="button" class="btn btn-success">Alta empleados</button>
+<button type="button" class="btn btn-success">Registro de estudiantes</button>
 </a>
 <br>
 <br>
@@ -19,7 +19,7 @@
       <th scope="col">Clave</th>
       <th scope="col">Nombre Completo</th>
       <th scope="col">Correo</th>
-      <th scope="col">Area</th>
+      <th scope="col">Programa</th>
       <th scope="col">Operaciones</th>
       <th scope="col">Activacion</th>
     </tr>

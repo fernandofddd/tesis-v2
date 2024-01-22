@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadosController;
+use App\Http\Controllers\LoginController;
 
 route::get('mensaje',[EmpleadosController::class,'mensaje']);
+
 route::get('nomina/{diast}/{pago}',[EmpleadosController::class,'nomina']);
 route::get('muestrasaludo/{nombre}/{dias}',[EmpleadosController::class,'saludo']);
 route::get('salir',[EmpleadosController::class,'salir'])->name('salir');
@@ -18,6 +20,9 @@ route::get('borraempleados/{ide}',[EmpleadosController::class,'borraempleados'])
 route::get('modificarempleado/{ide}',[EmpleadosController::class,'modificarempleado'])->name('modificarempleado');
 route::post('guardarcambios',[EmpleadosController::class,'guardarcambios'])->name('guardarcambios');
 
+route::get('login',[LoginController::class,'login'])->name('login');
+route::post('validar',[LoginController::class,'validar'])->name('validar');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,24 +31,24 @@ Route::get('/ruta1', function () {
     return "Hola mundo";
 });
 
-Route::get('/arearectangulo', function () {
-    $base = 4;
-    $altura = 10;
-    $area = $base * $altura;
-    return $area;
-});
+// Route::get('/arearectangulo', function () {
+//     $base = 4;
+//     $altura = 10;
+//     $area = $base * $altura;
+//     return $area;
+// });
 
-Route::get('/arearectangulo2', function () {
-    $base = 4;
-    $altura = 10;
-    $area = $base * $altura;
-    return "el area del rectangulo es:"  .$area. "con base $base y altura $altura";
-});
+// Route::get('/arearectangulo2', function () {
+//     $base = 4;
+//     $altura = 10;
+//     $area = $base * $altura;
+//     return "el area del rectangulo es:"  .$area. "con base $base y altura $altura";
+// });
 
-Route::get('/arearectangulo3/{base}/{altura}', function ($base, $altura) {
-    $area = $base * $altura;
-    return "el area del rectangulo es:"  .$area. "con base $base y altura $altura";
-});
+// Route::get('/arearectangulo3/{base}/{altura}', function ($base, $altura) {
+//     $area = $base * $altura;
+//     return "el area del rectangulo es:"  .$area. "con base $base y altura $altura";
+// });
 
 
 /*Route::get('/nomina/{diast}/{pagodiario?}', function ($diast, $pagodiario=null) {
@@ -59,15 +64,15 @@ Route::get('/arearectangulo3/{base}/{altura}', function ($base, $altura) {
     echo "<br> Total Pago $nomina";
 });*/
 
-Route::get('/redireccionamiento', function(){
-    return redirect('ruta1');
-});
+// Route::get('/redireccionamiento', function(){
+//     return redirect('ruta1');
+// });
 
-Route::redirect('redireccionamiento2','ruta1');
-Route::redirect('redireccionamiento3','arearectangulo3/4/7');
+// Route::redirect('redireccionamiento2','ruta1');
+// Route::redirect('redireccionamiento3','arearectangulo3/4/7');
 
-Route::get('/redireccionamiento4/{base}/{altura}', function($base,$altura){
-    return redirect("/arearectangulo3/$base/$altura");
-});
+// Route::get('/redireccionamiento4/{base}/{altura}', function($base,$altura){
+//     return redirect("/arearectangulo3/$base/$altura");
+// });
 
-Route::redirect('/redireccionamiento5', 'https://www.google.com');
+// Route::redirect('/redireccionamiento5', 'https://www.google.com');
